@@ -1,0 +1,7 @@
+{
+  "name": "Levô Entregador",
+  "description": "Aplicativo nativo para motoboys do Levô: rotas inteligentes, navegação no Maps/Waze, confirmação de paradas e rastreio em segundo plano.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

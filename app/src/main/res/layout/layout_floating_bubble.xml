@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_floating_bubble"
+    android:elevation="14dp"
+    android:padding="10dp">
+
+    <!-- Header Row (Compact Bar) -->
+    <LinearLayout
+        android:id="@+id/bubble_header_row"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Levô Brand Icon / Mini-status -->
+        <ImageView
+            android:id="@+id/bubble_icon"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@drawable/ic_bubble_bike"
+            android:background="@drawable/bg_bubble_icon"
+            android:padding="7dp"
+            android:contentDescription="Levô" />
+
+        <!-- Info Column -->
+        <LinearLayout
+            android:id="@+id/bubble_info_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="9dp"
+            android:layout_marginEnd="6dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/bubble_step_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LEVÔ · EM ROTA"
+                    android:textSize="9sp"
+                    android:textStyle="bold"
+                    android:textColor="#FF6B00"
+                    android:letterSpacing="0.06" />
+
+                <TextView
+                    android:id="@+id/bubble_amount_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="R$ 0,00"
+                    android:textSize="9sp"
+                    android:textStyle="bold"
+                    android:textColor="#10B981"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/bubble_customer_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cliente"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:maxWidth="145dp" />
+        </LinearLayout>
+
+        <!-- Fast Expand / Collapse Toggle -->
+        <ImageView
+            android:id="@+id/bubble_btn_expand"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_bubble_expand"
+            android:padding="4dp"
+            android:contentDescription="Expandir" />
+    </LinearLayout>
+
+    <!-- Expandable Actions Deck (1-Tap HUD over Maps/Waze) -->
+    <LinearLayout
+        android:id="@+id/bubble_actions_deck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginTop="8dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#26FFFFFF"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Address Hint -->
+        <TextView
+            android:id="@+id/bubble_address_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Endereço da entrega"
+            android:textSize="11sp"
+            android:textColor="#A0A5B5"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Quick Action Buttons Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- Call Customer -->
+            <LinearLayout
+                android:id="@+id/bubble_btn_call"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_bubble_btn_phone"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginEnd="6dp"
+                android:paddingHorizontal="6dp">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_bubble_phone"
+                    android:contentDescription="Ligar" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="Ligar"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="#60A5FA" />
+            </LinearLayout>
+
+            <!-- Mark Delivered directly from HUD -->
+            <LinearLayout
+                android:id="@+id/bubble_btn_deliver"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_weight="1.3"
+                android:background="@drawable/bg_bubble_btn_deliver"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="6dp">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_bubble_check"
+                    android:contentDescription="Entregue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="Entregue"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:textColor="#10B981" />
+            </LinearLayout>
+
+            <!-- Close overlay -->
+            <ImageView
+                android:id="@+id/bubble_btn_close"
+                android:layout_width="32dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="6dp"
+                android:src="@drawable/ic_bubble_close"
+                android:padding="8dp"
+                android:contentDescription="Fechar" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

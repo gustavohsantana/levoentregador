@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Levô Entregador</string>
+    <string name="rastreio_titulo">Levô · Rastreio ativo</string>
+    <string name="rastreio_texto">Enviando localização da rota em segundo plano</string>
+    <string name="rastreio_canal">Rastreio em Segundo Plano</string>
+    <string name="rastreio_canal_descricao">Mantém a localização sincronizada durante a rota</string>
+</resources>
